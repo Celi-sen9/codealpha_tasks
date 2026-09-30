@@ -3,105 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>My Music Player</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+    <title>Image Gallery</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="music-player">
+    <header>
+        <h1>My Image Gallery</h1>
+        <p>Explore my collection</p>
+    </header>
 
-        <h1>My Music Player</h1>
+    <!-- Filter Buttons -->
+    <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="nature">Nature</button>
+        <button class="filter-btn" data-filter="travel">Travel</button>
+        <button class="filter-btn" data-filter="city">City</button>
+    </div>
 
-        <div class="album-cover">
-            <img id="albumImage"
-                 src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=600&q=80"
-                 alt="Album Cover">
+    <!-- Gallery -->
+    <div class="gallery">
+
+        <div class="gallery-item nature">
+            <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?w=800"
+                 alt="Nature">
         </div>
 
-        <div class="song-info">
-            <h2 id="songTitle">Stay a Little Longer</h2>
-            <p id="artistName">RahulSapkal</p>
+        <div class="gallery-item travel">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800"
+                 alt="Travel">
         </div>
 
-        <div class="progress-container">
-            <span id="currentTime">0:00</span>
-
-            <input type="range"
-                   id="progressBar"
-                   min="0"
-                   max="100"
-                   value="0">
-
-            <span id="duration">0:00</span>
+        <div class="gallery-item city">
+            <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800"
+                 alt="City">
         </div>
 
-        <div class="controls">
-
-            <button id="previousBtn" type="button">
-                ⏮
-            </button>
-
-            <button id="playBtn" class="play-btn" type="button">
-                ▶
-            </button>
-
-            <button id="nextBtn" type="button">
-                ⏭
-            </button>
-
+        <div class="gallery-item nature">
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800"
+                 alt="Forest">
         </div>
 
-        <div class="volume-control">
-
-            <span>🔊</span>
-
-            <input type="range"
-                   id="volumeBar"
-                   min="0"
-                   max="1"
-                   step="0.01"
-                   value="1">
-
+        <div class="gallery-item travel">
+            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800"
+                 alt="Landscape">
         </div>
 
-        <div class="playlist">
-
-            <h3>Playlist</h3>
-
-            <div class="playlist-item active" data-index="0">
-                <div>
-                    <strong>Stay a Little Longer</strong>
-                    <span>RahulSapkal</span>
-                </div>
-                <span>🎵</span>
-            </div>
-
-            <div class="playlist-item" data-index="1">
-                <div>
-                    <strong>Midnight Echo</strong>
-                    <span>RahulSapkal</span>
-                </div>
-                <span>🎵</span>
-            </div>
-
-            <div class="playlist-item" data-index="2">
-                <div>
-                    <strong>Summer Rain</strong>
-                    <span>MoonpetalMedia</span>
-                </div>
-                <span>🎵</span>
-            </div>
-
+        <div class="gallery-item city">
+            <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800"
+                 alt="City Street">
         </div>
 
-        <audio id="audioPlayer"></audio>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+
+        <button id="closeBtn" class="close-btn">&times;</button>
+
+        <button id="prevBtn" class="nav-btn prev-btn">
+            &#10094;
+        </button>
+
+        <img id="lightboxImage" src="" alt="Large image">
+
+        <button id="nextBtn" class="nav-btn next-btn">
+            &#10095;
+        </button>
 
     </div>
 
