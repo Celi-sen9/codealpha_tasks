@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Music Player</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="music-player">
+
+        <h1>My Music Player</h1>
+
+        <div class="album-cover">
+            <img id="albumImage"
+                 src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=600&q=80"
+                 alt="Album Cover">
+        </div>
+
+        <div class="song-info">
+            <h2 id="songTitle">Stay a Little Longer</h2>
+            <p id="artistName">RahulSapkal</p>
+        </div>
+
+        <div class="progress-container">
+            <span id="currentTime">0:00</span>
+
+            <input type="range"
+                   id="progressBar"
+                   min="0"
+                   max="100"
+                   value="0">
+
+            <span id="duration">0:00</span>
+        </div>
+
+        <div class="controls">
+
+            <button id="previousBtn" type="button">
+                ⏮
+            </button>
+
+            <button id="playBtn" class="play-btn" type="button">
+                ▶
+            </button>
+
+            <button id="nextBtn" type="button">
+                ⏭
+            </button>
+
+        </div>
+
+        <div class="volume-control">
+
+            <span>🔊</span>
+
+            <input type="range"
+                   id="volumeBar"
+                   min="0"
+                   max="1"
+                   step="0.01"
+                   value="1">
+
+        </div>
+
+        <div class="playlist">
+
+            <h3>Playlist</h3>
+
+            <div class="playlist-item active" data-index="0">
+                <div>
+                    <strong>Stay a Little Longer</strong>
+                    <span>RahulSapkal</span>
+                </div>
+                <span>🎵</span>
+            </div>
+
+            <div class="playlist-item" data-index="1">
+                <div>
+                    <strong>Midnight Echo</strong>
+                    <span>RahulSapkal</span>
+                </div>
+                <span>🎵</span>
+            </div>
+
+            <div class="playlist-item" data-index="2">
+                <div>
+                    <strong>Summer Rain</strong>
+                    <span>MoonpetalMedia</span>
+                </div>
+                <span>🎵</span>
+            </div>
+
+        </div>
+
+        <audio id="audioPlayer"></audio>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
